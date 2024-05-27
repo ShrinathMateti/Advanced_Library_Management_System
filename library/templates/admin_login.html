@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block title %} Advanced Library Management System {% endblock %}
+<!--  -->
+{% block css %}
+<style>
+  body {
+    background-image: url("{% static 'wallpaper.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    height: 370px;
+    width: 360px;
+    background-color: white;
+    opacity: 0.9;
+    margin-top: 150px;
+  }
+
+  #btn:hover{
+    background-color: black;
+    color: white;
+  }
+</style>
+{% endblock %}
+<!--  -->
+{% block body %}
+{% if alert %}
+<div class="alert alert-light alert-dismissible fade show" role="alert">
+   <h6 class="text-center">Invalid Username or Password.</h6>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+<div class="container rounded">
+  <br />
+  <h3 class="text-center lead fw-bold">
+    <i class="fa-solid fa-user-tie"></i> Admin Login
+  </h3>
+  <form action="" method="post">
+    <!--  -->
+    {% csrf_token %}
+    <div class="mb-3 mt-5">
+      <label class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Username"
+        name="username"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Enter Password"
+        name="password"
+      />
+    </div>
+    <button type="submit" class="btn btn-success w-100 mt-3" name="login" id="btn">Login</button>
+</div>
+
+  </form>
+</div>
+{% endblock %}
+<!--  -->
+{% block js %}
+<!--  -->
+{% endblock %}

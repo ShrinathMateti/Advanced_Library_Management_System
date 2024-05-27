@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block title %} Advanced Library Management System {% endblock %}
+<!--  -->
+{% block css %}
+<style>
+     #btn:hover{
+    background-color: white;
+    color: #628c22;
+  }
+</style>
+{% endblock %}
+<!--  -->
+{% block body %}
+<div class="container mt-1">
+    <form method="POST" enctype="multipart/form-data">
+        <!--  -->
+         {% csrf_token %}
+        <h4 class="text-center"><i class="fa-solid fa-user"></i> Student Registration</h4>
+    <div class="row mt-2">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Username</i></label>
+            <input type="text" class="form-control mt-2" name="username" placeholder="Enter Username" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">First Name</i></label>
+            <input type="text" class="form-control mt-2" name="first_name" placeholder="Enter First Name" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Last Name</i></label>
+            <input type="text" class="form-control mt-2" name="last_name" placeholder="Enter Last Name" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Email</i></label>
+            <input type="email" class="form-control mt-2" name="email" placeholder="Enter Email" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Mobile Number</i></label>
+            <input type="number" class="form-control mt-2" name="phone" placeholder="Enter Mobile Number" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Branch Name</i></label>
+            <input type="text" class="form-control mt-2" name="branch" placeholder="Enter Branch Name" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Class Name</i></label>
+            <input type="text" class="form-control mt-2" name="classroom" placeholder="Enter Class Name" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Roll Number</i></label>
+            <input type="text" class="form-control mt-2" name="roll_no" placeholder="Enter Roll Number" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Student Image</i></label>
+            <input type="file" class="form-control mt-2" name="image" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Password</i></label>
+            <input type="password" class="form-control mt-2" name="password" placeholder="Enter Password" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Confirm Password</i></label>
+            <input type="password" class="form-control mt-2" name="confirm_password" placeholder="Confirm Password" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success mt-3" id="btn">Register As Student</button>
+</div>
+</form>
+
+{% endblock %}
+<!--  -->
+{% block js %}
+<!--  -->
+{% if alert %}
+
+<script>
+    alert("Registration Successfull.")
+    document.location = "/student_login"
+</script>
+
+{% endif %}
+<!--  -->
+
+{% endblock %}

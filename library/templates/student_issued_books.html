@@ -1,0 +1,53 @@
+{% extends 'student_navbar.html' %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block title %} Advanced Library Management System {% endblock %}
+<!--  -->
+{% block css %}
+<!--  -->
+{% endblock %}
+<!--  -->
+{% block body %}
+<div class="container mt-4">
+  <h4 class="text-center"><u>All Issued Books</u></h4>
+  <table class="table table-hover" id="example">
+    <thead>
+      <tr class="text-center">
+        <th>Sr.No</th>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Book Cover</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Issued Date</th>
+        <th>Return Date</th>
+        <th>Fine</th>
+        <!-- <th>Pay Fine</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in li1 %}
+      <tr class="text-center">
+        <td>{{forloop.counter}}.</td>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td><img src="{{i.4.url}}" height="150px" /></td>
+        <td>{{i.2}}</td>
+        <td>{{i.3}}</td>
+
+        {% endfor %}
+        <!--  -->
+        {% for i in li2 %}
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td>₹ {{i.2}}</td>
+        <!-- <td>
+          <a href="" class="btn btn-success" target="_blank">Pay Fine</a>
+        </td> -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'admin_navbar.html' %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block title %}Advanced Library Management System {% endblock %}
+<!--  -->
+{% block css %}
+<!--  -->
+{% endblock %}
+<!--  -->
+{% block body %}
+<div class="container">
+  <h4 class="text-center mt-3 mb-4">Update Book</h4>
+  <center>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!--  -->
+      {{form.as_p}}
+
+      <input
+        type="submit"
+        value="Update Book"
+        name="update_book"
+        class="btn btn-success w-50 mb-1"
+      />
+    </form>
+    <a href="/adminhome/" class="text-center">Go To Home</a>
+  </center>
+</div>
+
+{% endblock %}
+<!--  -->
